@@ -79,14 +79,60 @@ if (int(terminalGUI) == 1 ):
         
         for y in top_items[:5]:
             print('%s' % y)
-        
-    #input for users
-    print('Select movies for users:')
-    u1 = input('user 1: ')
-    u2 = input('user 2: ')
-    u3 = input('user 3: ')
     
-    Recommend_user()
+    #SELECTION SCREEN
+    print('Welcome to the CS4319 Movie Recommender System\nPlease select one of the following:')
+    print('1.) Recommend movies for 3 users')
+    print('2.) Search for similar movies')
+    print('3.) Recommend most popular movies')
+    selection = input('Selection:  ')
+    
+    ## Recommend movies to 3 users using hybrid factorization collab algorithm
+    if (int(selection) == 1):
+        #input for users
+        print('Select movies for users:')
+        u1 = input('user 1: ')
+        u2 = input('user 2: ')
+        u3 = input('user 3: ')
+        Recommend_user()
+        
+    ## View Similar movies to selected movie using Item similarity algorithm
+    if (int(selection) == 2):
+        
+        #used to cycle through films
+        loop=1
+        i=0
+        #print('loop =' + str(loop))
+        
+        while (loop==1):
+            #show first 5 movies in movielens list
+            def showMovies(i):
+                #print(i)
+                for i in range(i+5):
+                    print('(' + str(i+1) +')' + data[('item_labels')][i])
+                print('(0) View More')
+        
+            def item_similarity(loop):
+                print('Great! You might also like these movies: \n ')
+                #item similarity algorithm
+                print(data[('item_labels')][cosine_similarity(model.item_embeddings)[like-1].argsort()][-5:][::-1])
+                #print('loop =' + str(loop))
+            showMovies(i)
+        
+            like = input('Selection:  ')
+            like = int(like)
+
+            #show more movies
+            if (like == 0):
+                #print(i)
+                i = i + 5
+                #print(i)
+                showMovies(i)
+                
+            else:
+                item_similarity(loop)
+                loop-=1
+        
 
 '''GUI creation of recommender system using Lightfm'''
 if (int(terminalGUI) == 2 ):
