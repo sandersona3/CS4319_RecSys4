@@ -12,8 +12,8 @@ import importlib
 #print(clock)
 
 '''used to import turicreate file'''
-#import turicreate as tc
-#from recSys4tc import turiWork
+import turicreate as tc
+from recSys4tc import turiWork
 #turiWork()
 #-----------------------------------------------------------------------------------------------------------------
 
@@ -132,6 +132,12 @@ if (int(terminalGUI) == 1 ):
             else:
                 item_similarity(loop)
                 loop-=1
+                
+    ## View most popular movies to recommend to a user, using popularity algorithm
+    if (int(selection) == 3):
+        popRec = input('Recommend top 5 popular movies to user:  ')
+        turiWork(popRec)
+            
         
 
 '''GUI creation of recommender system using Lightfm'''
