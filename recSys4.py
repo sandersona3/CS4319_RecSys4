@@ -5,6 +5,7 @@ from lightfm import LightFM
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 import importlib
+import time
 
 #-----------------------------------------------------------------------------------------------------------------
 '''Used to make a time stamp print out'''
@@ -14,6 +15,8 @@ import importlib
 '''used to import turicreate file'''
 import turicreate as tc
 from recSys4tc import turiWork
+from recSys4tc import itemSim
+from tcCompare import *
 #turiWork()
 #-----------------------------------------------------------------------------------------------------------------
 
@@ -85,6 +88,7 @@ if (int(terminalGUI) == 1 ):
     print('1.) Recommend movies for 3 users')
     print('2.) Search for similar movies')
     print('3.) Recommend most popular movies')
+    print('4.) Turicreate Compare\n')
     selection = input('Selection:  ')
     
     ## Recommend movies to 3 users using hybrid factorization collab algorithm
@@ -137,7 +141,34 @@ if (int(terminalGUI) == 1 ):
     if (int(selection) == 3):
         popRec = input('Recommend top 5 popular movies to user:  ')
         turiWork(popRec)
-            
+    
+    if (int(selection) == 4):
+        print('TURICREATE COMPARE')
+        print('Compare recommender algorithms for user 1 and 2')
+        '''
+        print('Printing item Similarity algorithm:\n')
+        time.sleep(4)
+        itemSim()
+        time.sleep(4)
+        
+        print('\nPrinting Item popularity algorithm:\n')
+        time.sleep(4)
+        itemPop()
+        time.sleep(4)
+        
+        print('\nPrinting Rank Factorization algorithm:\n')
+        time.sleep(4)
+        rankFactor()
+        time.sleep(4)
+        '''
+        print('\nPrint Model Comparison:\n')
+        time.sleep(4)
+        modelCompare()
+        time.sleep(4)
+        
+        
+        
+    
         
 
 '''GUI creation of recommender system using Lightfm'''
@@ -261,4 +292,4 @@ if (int(terminalGUI) == 2 ):
     sim_item = Button(root, text="Search for similar movies", width=22,height=2,bg="silver",command=item_similarity).place(x=8,y=325)
 
     root.mainloop()
-    
+   
