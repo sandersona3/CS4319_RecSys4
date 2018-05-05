@@ -15,8 +15,8 @@ __init__.py : file communication
 
 **recSys4t.py** : print timestamp before prog execute
 
-**recSys4tc.py** : turicreate for movie popularity algorithm
+**recSys4tc.py** : turi create for movie popularity algorithm
 
-**tcCompare.py** : turicreate for 3 model comparison
+**tcCompare.py** : turi create for 3 model comparison
 
 **recSys4GUI.py** : gui application. limited. only supports lightfm hybrid rank factorization algorithm and item similarity algorithm for 5 movies.
