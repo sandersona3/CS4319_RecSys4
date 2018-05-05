@@ -3,6 +3,8 @@ Recommender System for Movies
 
 iPython Added May-4,2018
 
+**Recommender_System_Assignment_Group4.ipynb** : iPython file for course submission using template
+
  **CS4319_recSys_group4.ipynb** : iPython file with main program executing with while loop
  
  **recSys4w.py** : main file with while loop
