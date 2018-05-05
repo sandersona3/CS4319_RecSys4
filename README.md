@@ -3,7 +3,7 @@ Recommender System for Movies
 
 iPython Added May-4,2018
 
- **CS4319_recSys_group4.ipynb **
+ **CS4319_recSys_group4.ipynb** : iPython file with main program executing with while loop
  
  **recSys4w.py** : main file with while loop
  
